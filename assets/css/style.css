@@ -1,0 +1,100 @@
+* {
+  box-sizing: border-box;
+}
+:root {
+  font-family: sans-serif;
+  font-size: 18px;
+}
+.section {
+  display: flex;
+  justify-content: center;
+}
+.userCardSection {
+  max-width: 1440px;
+}
+.socialIcons {
+  display: flex;
+  justify-content: center;
+  margin-top: 25px;
+}
+.socialIcon {
+  display: inline-block;
+  margin: 10px;
+}
+.iconLink {
+  display: block;
+  max-height: 46px;
+}
+.icon {
+  padding: 10px;
+  border: 1px solid #e0e0e0;
+}
+.iconLink,
+.icon {
+  border-radius: 10%;
+}
+.iconLink:hover {
+  background-color: #e74040;
+  border-radius: 10%;
+}
+.userCardList {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+}
+.cardWrapper {
+  display: flex;
+  margin: 32px 16px;
+}
+.cardContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  text-align: center;
+  width: 263px;
+}
+.cardImageWrapper {
+  position: relative;
+  width: inherit;
+  height: 263px;
+}
+.initials {
+  font-size: 32px;
+  color: white;
+  height: inherit;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.cardImage {
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  position: absolute;
+  height: inherit;
+  width: inherit;
+  object-fit: cover;
+  object-position: center top;
+}
+.contentWrapper {
+  padding: 16px;
+}
+.cardName {
+  margin: 16px 0px;
+  font-weight: bold;
+  color: #4d3033;
+}
+.cardDescription {
+  color: #7a7585;
+}
+.cardName,
+.cardDescription {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+.cardName:empty::after,
+.initials:empty::after {
+  content: "undefined";
+}
