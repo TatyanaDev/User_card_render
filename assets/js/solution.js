@@ -1,5 +1,10 @@
 "use strict";
 
+const icons = new Map()
+  .set("facebook.com", "./assets/icon/facebook.svg")
+  .set("twitter.com", "./assets/icon/twitter.svg")
+  .set("instagram.com", "./assets/icon/instagram.svg");
+
 const cardContainer = document.querySelector(".userCardList");
 const cards = responseData.map((people) => returnUser(people));
 cardContainer.append(...cards);
@@ -77,10 +82,6 @@ function sortImage({ firstName, lastName, profilePicture, id }, { className }) {
 }
 
 function createLink({ firstName, lastName, contacts }) {
-  const icons = new Map()
-    .set("facebook.com", "./assets/icon/facebook.svg")
-    .set("twitter.com", "./assets/icon/twitter.svg")
-    .set("instagram.com", "./assets/icon/instagram.svg");
   const sort = contacts
     .map((value) => {
       return value.replace("www.", "");
@@ -115,7 +116,7 @@ function createLink({ firstName, lastName, contacts }) {
       );
     }
   });
-  return result;
+  return result.filter(Boolean);
 }
 
 function imageError({ target }) {
