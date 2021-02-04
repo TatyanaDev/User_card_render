@@ -45,6 +45,9 @@
 .cardWrapper:hover {
   box-shadow: 12px 16px 33px 0px rgba(0, 0, 0, 0.2);
 }
+/* .shadow {
+  box-shadow: 12px 16px 33px 0px rgba(0, 0, 0, 0.2);
+} */
 .cardWrapper {
   display: flex;
   margin: 32px 16px;

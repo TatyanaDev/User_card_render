@@ -5,9 +5,13 @@ const icons = new Map()
   .set("twitter.com", "./assets/icon/twitter.svg")
   .set("instagram.com", "./assets/icon/instagram.svg");
 
+const url = fetch("./assets/js/users.json")
+  .then((response) => response.json())
+  .then((people) => {
+    const cards = people.map((people) => returnUser(people));
+    cardContainer.append(...cards);
+  });
 const cardContainer = document.querySelector(".userCardList");
-const cards = responseData.map((people) => returnUser(people));
-cardContainer.append(...cards);
 
 function returnUser(people) {
   const content =
@@ -168,7 +172,3 @@ function createElement(
   elem.append(...children);
   return elem;
 }
-
-// function userChoice({ currentTarget }) {
-//   currentTarget.classList.toggle("shadow");
-// }
