@@ -1,5 +1,9 @@
 "use strict";
 
+function userChoice({ currentTarget }) {
+  currentTarget.classList.toggle("shadow");
+}
+
 const icons = new Map()
   .set("facebook.com", "./assets/icon/facebook.svg")
   .set("twitter.com", "./assets/icon/twitter.svg")
@@ -10,11 +14,9 @@ const cards = responseData.map((people) => returnUser(people));
 cardContainer.append(...cards);
 
 function returnUser(people) {
-  const content =
-    "Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Maecenas sed diam eget risus varius blandit sit amet non magna. Nullam quis risus eget urna mollis ornare vel eu leo";
   return createElement(
     "li",
-    { classNames: ["cardWrapper"] },
+    { classNames: ["cardWrapper"], onClick: userChoice },
     createElement(
       "article",
       { classNames: ["cardContainer"] },
@@ -32,7 +34,9 @@ function returnUser(people) {
         createElement(
           "p",
           { classNames: ["cardDescription"] },
-          document.createTextNode(content)
+          document.createTextNode(
+            "Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Maecenas sed diam eget risus varius blandit sit amet non magna. Nullam quis risus eget urna mollis ornare vel eu leo"
+          )
         ),
         createElement(
           "ul",
@@ -169,6 +173,16 @@ function createElement(
   return elem;
 }
 
+// $("li").click(function () {
+//   $(this).toggleClass("shadow");
+// });
+
+// cardWrapper.click(function () {
+//   $(this).toggleClass("shadow");
+// });
+
 // function userChoice({ currentTarget }) {
 //   currentTarget.classList.toggle("shadow");
 // }
+
+// document.getElementsByClassName("cardWrapper").onClick(userChoice());

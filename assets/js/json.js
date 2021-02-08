@@ -14,8 +14,6 @@ const url = fetch("./assets/js/users.json")
 const cardContainer = document.querySelector(".userCardList");
 
 function returnUser(people) {
-  const content =
-    "Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Maecenas sed diam eget risus varius blandit sit amet non magna. Nullam quis risus eget urna mollis ornare vel eu leo";
   return createElement(
     "li",
     { classNames: ["cardWrapper"] },
@@ -36,7 +34,9 @@ function returnUser(people) {
         createElement(
           "p",
           { classNames: ["cardDescription"] },
-          document.createTextNode(content)
+          document.createTextNode(
+            "Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Maecenas sed diam eget risus varius blandit sit amet non magna. Nullam quis risus eget urna mollis ornare vel eu leo"
+          )
         ),
         createElement(
           "ul",
@@ -172,3 +172,7 @@ function createElement(
   elem.append(...children);
   return elem;
 }
+
+// function userChoice({ currentTarget }) {
+//   currentTarget.classList.toggle(".shadow");
+// }
